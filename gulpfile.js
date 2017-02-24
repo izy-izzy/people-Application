@@ -19,7 +19,6 @@
 	const htmlhint = require("gulp-htmlhint");
 	const imagemin = require('gulp-imagemin');
 	const pngquant = require('imagemin-pngquant');
-	const gulpDocs = require('gulp-ngdocs');
 
 	const imagesFiles = [
 		'./devel/images/**/*.png',

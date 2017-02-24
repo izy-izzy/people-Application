@@ -23,6 +23,7 @@ Not completed. There are more scenarios that needs to be tested:
 * Correct routing of the appliation
 
 Install JDK 1.8 according to OS.
+Install Ruby according to OS.
 '''
 npm run setup
 node httpserver.js (for local HTTP server) (run on a separate console)

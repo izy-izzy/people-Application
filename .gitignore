@@ -45,3 +45,10 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+node_modules
+typings/globals
+public/css
+public/fonts
+public/js
+public/templates
+
