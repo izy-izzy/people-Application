@@ -17,7 +17,7 @@
     "rx-angular": "^1.1.3"
   },
   "scripts": {
-    "setup": "gem install scss_lint && npm install && npm run install-typescript && npm run install-protractor && npm run install-karma && gulp && npm run test",
+    "setup": "npm install -g gulp && gem install scss_lint && npm install && npm run install-typescript && npm run install-protractor && npm run install-karma && gulp && npm run test",
     "install-typescript": "npm install -g typescript && npm install -g typings && typings install",
     "install-protractor": "npm install -g concurrently && npm install -g protractor && npm install -g webdriver-manager && webdriver-manager update",
     "install-karma": "npm install -g karma && npm install -g karma-jasmine && npm install -g jasmine-core && npm install -g karma-chrome-launcher && npm install -g karma-firefox-launcher && npm install -g karma-phantomjs-launcher",
