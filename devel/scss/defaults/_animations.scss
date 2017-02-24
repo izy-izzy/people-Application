@@ -1,0 +1,20 @@
+// Text blocks animation in note detail. (ng-animate)
+.person {
+	@include transition(all $transition-speed-fast ease-in-out);
+
+	&.ng-animate {
+		@include transition(all $transition-speed-default ease-in-out);
+	}
+	&.ng-enter {
+		opacity: 0;
+		&.ng-enter-active {
+			opacity: 1;
+		}
+	}
+	&.ng-leave {
+		opacity: 1;
+		&.ng-leave-active {
+			opacity: 0;
+		}
+	}
+}

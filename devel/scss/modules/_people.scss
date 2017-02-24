@@ -1,0 +1,90 @@
+$people-block-name:			'people';
+$person-block-name: 		'person';
+
+.#{$people-block-name}{
+	&__filter{
+		margin-bottom: $margin;
+	}
+}
+
+.#{$person-block-name}-edit{
+	&__header{
+		margin: $margin/2 0;
+	}
+}
+
+.#{$person-block-name}{
+
+	&-avatar{
+		&__image{
+			&--small{
+				margin-bottom: $margin;
+				min-width: 50px;
+				min-height: 50px;
+				max-width: 100px;
+				max-height: 100px; 
+			}
+		}
+	}
+
+	&__header{
+		background: darken($silver, 10%);
+		padding: 0 $margin;
+		border-radius: 0;
+		display: flex;
+		flex-flow: row wrap;
+		align-items: center;
+
+		.#{$person-block-name}-heading{
+			margin-top: $margin/2;
+			display: inline-block;
+			flex: 1 0 0;
+		}
+
+		.#{$person-block-name}-edit{
+			flex: 0 0 0;
+			display: flex;
+			flex-flow: row nowrap;
+			align-items: center;
+		}
+	}
+
+	&__content{
+		padding: 0 $margin;
+		margin: $margin 0;
+		display: flex;
+		flex-flow: row wrap;
+
+		.#{$person-block-name}-avatar{
+			flex: 0 0 0;
+			margin-right: $margin;
+		}
+
+		.#{$person-block-name}-info{
+			flex: 1 0 0;
+			min-width: 250px; 
+
+			&__item{
+				margin: $margin/2 0;
+
+				i{
+					min-width: 20px;
+					color: $orange;
+					&::before{
+						width: 100%;
+						text-align: center;
+						display: inline-block;
+					}
+				}
+
+				.#{$person-block-name}-job{
+					color: $black;
+					background: $lime;
+					font-weight: 500;
+					padding: 5px;
+					border: 1px solid $black;
+				}
+			}
+		}
+	}
+}

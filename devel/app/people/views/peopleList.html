@@ -1,0 +1,111 @@
+<div class="container people">
+	<header>
+		<div class="row people__header">
+			<div class="col-xs-8">
+				<h1>People</h1>
+			</div>
+			<div class="col-xs-4">
+				<button class="btn btn-primary margin-top pull-right" 
+						ng-click="$ctrl.addNewPerson()"
+						id="addPersonButton">
+						<i class="fa fa-user-plus" aria-hidden="true"></i>
+						Add person
+				</button>
+			</div>
+		</div>
+	</header>
+	
+	<section>
+		<div class="row people__filter">
+			<div 	ng-if="!$ctrl.isLoading && !$ctrl.loadingPeopleFailed" 
+					class="col-xs-12" >
+				<div class="input-group">
+					<span class="input-group-addon"><i class="fa fa-filter" aria-hidden="true"></i></span>
+					<input type="text" class="form-control" ng-model="$ctrl.filterPhrase" placeholder="fitler ..."/>
+				</div>
+			</div>
+		</div>
+	</section>
+		
+	<section>
+		<div class="people__list row">
+			<div 	ng-if="!$ctrl.isLoading && !$ctrl.loadingPeopleFailed"
+					ng-repeat="person in $ctrl.people | filter:$ctrl.filterPhrase" 
+					class="person col-xs-12 col-md-6">
+				<section>
+					<div class="row ">
+						<div class="col-xs-12">
+							<header>
+								<div class="person__header">
+									<h3 class="person-heading">
+										<i class="person-heading__icon fa fa-user-circle" aria-hidden="true"></i>
+										{{person.name}}
+									</h3>
+									<div class="person-edit">
+										<button class="btn btn-default btn-default--delete" 
+												ng-click="$ctrl.removePerson(person)">
+												<i class="fa fa-user-times" aria-hidden="true"></i>
+										</button>
+										<button class="btn btn-default" 
+												ng-click="$ctrl.editPerson(person)">
+												<i class="fa fa-pencil" aria-hidden="true"></i>
+										</button>
+									</div>
+								</div>
+							</header>
+						</div>
+					</div>
+					<section>
+						<div class="person__content row">
+							<div ng-if="person.avatar" class="person-avatar">
+								<img 	ng-src="{{person.avatar}}" 
+										alt="{{person.name}}-avatar" 
+										class="person-avatar__image person-avatar__image--small"/>
+							</div>
+							<div class="person-info">
+								<div class="person-info__item">
+									<span class="person-job label label-default">{{person.job}}</span>
+								</div>
+								<div ng-if="person.email" class="person-info__item">
+									<i class="fa fa-envelope-open-o" aria-hidden="true"></i>
+									<span >{{person.email}}</span>
+								</div>
+								<div ng-if="person.location" class="person-info__item">
+									<i class="fa fa-map-marker" aria-hidden="true"></i>
+									{{person.location}}
+								</div> 
+								<div ng-if="person.tag" class="person-info__item">
+									<i class="fa fa-tag" aria-hidden="true"></i>
+									{{person.tag}}
+								</div>
+							</div>
+						</div>
+					</section>
+				</section>
+			</div>
+			
+			<div 	ng-if="$ctrl.isLoading" 
+					class="col-xs-12">
+				<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+				<span class="sr-only">Loading...</span>
+			</div>
+
+			<div	ng-if="$ctrl.loadingPeopleFailed" 
+					class="col-xs-12">
+				<div class="alert alert-danger" role="alert">
+					<span>Unable to load people's list.</span>
+					<hr/>
+					<button class="btn btn-default" 
+							ng-click="$ctrl.getPeopleList()">
+							Retry
+					</button>
+					<button class="btn btn-default" 
+							ng-click="$ctrl.useFakePeople()">
+							Use faked one
+					</button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+</div>

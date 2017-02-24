@@ -1,0 +1,21 @@
+{
+	"name": "talk-talk-test",
+	"globalDependencies": {
+		"angular": "registry:dt/angular#1.5.0+20160627105203",
+		"angular-mocks": "github:DefinitelyTyped/DefinitelyTyped/angularjs/angular-mocks.d.ts#237339b0238845b027431280c72dc663ca534132",
+		"angular-resource": "registry:dt/angular-resource#1.5.0+20160613142217",
+		"angular-ui-router": "registry:dt/angular-ui-router#1.1.5+20160521151413",
+		"bluebird": "github:DefinitelyTyped/DefinitelyTyped/bluebird/bluebird.d.ts#237339b0238845b027431280c72dc663ca534132",
+		"express": "github:DefinitelyTyped/DefinitelyTyped/express/express.d.ts#237339b0238845b027431280c72dc663ca534132",
+		"express-serve-static-core": "github:DefinitelyTyped/DefinitelyTyped/express-serve-static-core/express-serve-static-core.d.ts#237339b0238845b027431280c72dc663ca534132",
+		"jasmine": "registry:dt/jasmine#2.2.0+20160621224255",
+		"jquery": "github:DefinitelyTyped/DefinitelyTyped/jquery/jquery.d.ts#08ed4e9f1869e37e29514d862e0158b40e550232",
+		"karma": "registry:dt/karma#0.13.9+20160501125529",
+		"log4js": "github:DefinitelyTyped/DefinitelyTyped/log4js/log4js.d.ts#237339b0238845b027431280c72dc663ca534132",
+		"mime": "github:DefinitelyTyped/DefinitelyTyped/mime/mime.d.ts#237339b0238845b027431280c72dc663ca534132",
+		"node": "github:DefinitelyTyped/DefinitelyTyped/node/node.d.ts#237339b0238845b027431280c72dc663ca534132",
+		"rx": "npm:rx/ts/rx.all.d.ts",
+		"rx.angular": "registry:dt/rx.angular#0.0.0+20160317120654",
+		"serve-static": "github:DefinitelyTyped/DefinitelyTyped/serve-static/serve-static.d.ts#237339b0238845b027431280c72dc663ca534132"
+	}
+}

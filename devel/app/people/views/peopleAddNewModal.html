@@ -1,0 +1,95 @@
+<div class="person-edit">
+	<header>
+		<h2 ng-if="$ctrl.edit" class="person-edit__header">Edit person</h2>
+		<h2 ng-if="!$ctrl.edit" class="person-edit__header">Add new person</h2>
+	</header>
+
+	<section>
+		<div class="row person-edit__form">
+			<form 	name="personAddNew" 
+					ng-submit="$ctrl.addNewPerson()">
+				<div class="col-xs-12">
+					<div class="input-group margin-top" 
+						ng-class="{'input-group--invalid': personAddNew.personName.$invalid, 
+									'input-group--valid': personAddNew.personName.$valid}">
+						<span class="input-group-addon"><i class="fa fa-user-circle" aria-hidden="true"></i></span>
+						<input 	type="text"
+								name="personName"
+								class="form-control" 
+								placeholder="Person's name" 
+								ng-model="$ctrl.personToEdit.name"
+								required="true"/>
+					</div>
+				</div>
+
+				<div class="col-xs-12">
+					<div class="input-group margin-top" 
+						ng-class="{'input-group--invalid': personAddNew.personEmail.$invalid, 
+									'input-group--valid': personAddNew.personEmail.$valid}">
+						<span class="input-group-addon"><i class="fa fa-envelope-open-o" aria-hidden="true"></i></span>
+						<input 	type="email" 
+								name="personEmail"
+								class="form-control" 
+								placeholder="email" 
+								ng-model="$ctrl.personToEdit.email"
+								required="true"/>
+					</div>
+				</div>
+
+				<div class="col-xs-12">
+					<div class="input-group margin-top" >
+						<span class="input-group-addon">Job:</span>
+						<input type="text" class="form-control" placeholder="Job" ng-model="$ctrl.personToEdit.job"/>
+					</div>
+				</div>
+
+				<div class="col-xs-12">
+					<div class="input-group margin-top" >
+						<span class="input-group-addon"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+						<input type="text" class="form-control" placeholder="Location" ng-model="$ctrl.personToEdit.location"/>
+					</div>
+				</div>
+
+				<div class="col-xs-12">
+					<div class="input-group margin-top" >
+						<span class="input-group-addon"><i class="fa fa-tag" aria-hidden="true"></i></span>
+						<input type="text" class="form-control" placeholder="Tag" ng-model="$ctrl.personToEdit.tag"/>
+					</div>
+				</div>
+
+				<div class="col-xs-12">
+					<div class="input-group margin-top" >
+						<span class="input-group-addon">URL</span>
+						<input type="text" class="form-control" placeholder="Avatar's url" ng-model="$ctrl.personToEdit.avatar"/> 
+					</div>
+				</div>
+
+				<div class="col-xs-12 person-avatar text-center margin-top" 
+					ng-if="$ctrl.personToEdit.avatar && $ctrl.personToEdit.avatar != ''">
+					<img 	ng-src="{{$ctrl.personToEdit.avatar}}" 
+							alt="{{$ctrl.personToEdit.name}}-avatar" 
+							class="person-avatar__image--small"/>
+				</div>
+
+				<div class="col-xs-12">
+					<hr/>
+					<button 
+						type="button"
+						class="btn btn-default" 
+						ng-click="$ctrl.cancel()">
+						Cancel
+					</button>
+
+					<button 
+						class="btn btn-default pull-right"
+						ng-disabled="personAddNew.$invalid"
+						type="submit"
+						id="submitAddNewPerson">
+						<span ng-if="$ctrl.edit">Edit person</span>
+						<span ng-if="!$ctrl.edit">Add new person</span>
+					</button>
+				</div>
+			</form>
+		</div>
+	</section>
+</div>
